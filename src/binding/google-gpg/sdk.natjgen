@@ -1,0 +1,89 @@
+{
+  "platform": "iOS",
+  "package-base": "org.moe.binding.google.gpg",
+  "base-sdk": "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk",
+  "header-search-paths": [
+  ],
+  "user-header-search-paths": [],
+  "framework-search-paths": [
+    "${PROJECT}/src/binding/google-gpg/sdk/ios"
+  ],
+  "source": "#import \u003cgpg/GooglePlayGames.h\u003e\n",
+  "output": "src/binding/google-gpg/java",
+  "docsets": [
+  ],
+  "unit-rules": [
+    {
+      "final": false,
+      "conditions": [
+        { "condition": "path-prefix", "value": "${SDK}" },
+        { "condition": "type-match", "value": "objc-class-method" },
+        { "condition": "name-match", "value": "class" }
+      ],
+      "actions": [
+        { "action": "handling-mode", "value": "disabled" }
+      ]
+    },
+    {
+      "final": false,
+      "conditions": [
+        { "condition": "path-prefix", "value": "${SDK}" },
+        { "condition": "type-match", "value": "objc-instance-method" },
+        { "condition": "name-match", "value": "retain" }
+      ],
+      "actions": [
+        { "action": "handling-mode", "value": "disabled" }
+      ]
+    },
+    {
+      "final": false,
+      "conditions": [
+        { "condition": "path-prefix", "value": "${SDK}" },
+        { "condition": "type-match", "value": "objc-instance-method" },
+        { "condition": "name-match", "value": "release" }
+      ],
+      "actions": [
+        { "action": "handling-mode", "value": "disabled" }
+      ]
+    },
+    {
+      "final": false,
+      "conditions": [
+        { "condition": "path-prefix", "value": "${SDK}" },
+        { "condition": "type-match", "value": "objc-instance-method" },
+        { "condition": "name-match", "value": "autorelease" }
+      ],
+      "actions": [
+        { "action": "handling-mode", "value": "disabled" }
+      ]
+    },
+    {
+      "final": true,
+      "conditions": [
+        { "condition": "path-prefix", "value": "${SDK}" }
+      ],
+      "actions": [
+        { "action": "replace-package-base", "value": "apple" },
+        { "action": "handling-mode", "value": "external" }
+      ]
+    },
+    {
+      "final": false,
+      "conditions": [
+        { "condition": "framework-match", "value": "gpg" }
+      ],
+      "actions": [
+        { "action": "replace-package-base", "value": "org.moe.binding" }
+      ]
+    }
+  ],
+  "logs-path": "${PROJECT}/src/binding/google-gpg/logs/natjgen-${DATETIME}.html",
+  "type-config-output": "${PROJECT}/src/binding/google-gpg/typeconfig.out.ngtconf",
+  "type-config-clean-output": false,
+  "header-file-resolving-paths": [
+    "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
+    "${SDK}/usr/include",
+    "${SDK}/System/Library/Frameworks"
+  ],
+  "inline-function-binding-output": "${PROJECT}/src/binding/google-gpg/native"
+}

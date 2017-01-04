@@ -1,0 +1,62 @@
+/************************/
+/** Build Script Setup **/
+/************************/
+
+buildscript {
+    // Add central and local Maven repos
+    repositories {
+        jcenter()
+        mavenLocal()
+    }
+    dependencies {
+        // MOE plugin
+        classpath group: 'org.multi-os-engine', name: 'moe-gradle', version: '1.2.+'
+    }
+}
+
+/*******************/
+/** Project Setup **/
+/*******************/
+
+// Apply plugins
+apply plugin: 'moe'
+
+// Set source and target to Java 8
+sourceCompatibility = "1.8"
+targetCompatibility = "1.8"
+
+sourceSets {
+    main {
+        java {
+            srcDirs += 'src/binding/facebook/java'
+            srcDirs += 'src/binding/google-gpg/java'
+            srcDirs += 'src/binding/google-plus/java'
+            srcDirs += 'src/binding/google-signin/java'
+            srcDirs += 'src/binding/mopub/java'
+        }
+    }
+}
+
+// Exclude all files from Gradle's test runner
+test { exclude '**' }
+
+// Setup MOE
+moe {
+    xcode.mainTarget = 'Frameworks'
+    xcode.testTarget = 'Frameworks-Test'
+    xcode.packageName = 'moe.moe.frameworks'
+    xcode.launchScreenFilePath = 'src/main/resources/LaunchScreen.xib'
+    xcode.bundleID = 'moe.Frameworks'
+    xcode.generateProject = false
+    xcode.xcodeProjectDirPath = 'xcode'
+}
+
+// Set dependencies
+dependencies {
+    // Compile with 'jar' files in the project's 'lib' directory
+    compile fileTree(dir: 'lib', include: '*.jar')
+
+}
+
+
+

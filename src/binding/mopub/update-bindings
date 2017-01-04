@@ -1,0 +1,19 @@
+#!/bin/bash
+
+realpath () {
+  [[ $1 = /* ]] && echo "$1" || echo "$PWD/${1#./}"
+}
+cd "$(dirname "$(realpath "$0")")"
+
+NATJGEN_FILE=`pwd`/sdk.natjgen
+cd ../../../
+PROJECT_NAME=`basename $(pwd)`
+cd ..
+PROJECT_DIR=`pwd`
+
+echo "$PROJECT_DIR"
+echo "$PROJECT_NAME"
+echo "$NATJGEN_FILE"
+
+cd "$HOME/.moe/moe-sdk-1.2.0/tools"
+java -cp wrapnatjgen.jar org.moe.natjgen.Main "$PROJECT_DIR" "$PROJECT_NAME" "$NATJGEN_FILE"
