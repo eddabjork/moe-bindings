@@ -24,6 +24,7 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.foundation.NSNumber;
 
 @Generated
 @Library("FBSDKCoreKit")
@@ -256,4 +257,13 @@ public class FBSDKSettings extends NSObject {
 	@Selector("version")
 	@NInt
 	public static native long version_static();
+
+	@Generated
+	@Selector("autoLogAppEventsEnabled")
+	public static native NSNumber autoLogAppEventsEnabled();
+
+	@Generated
+	@Selector("setAutoLogAppEventsEnabled:")
+	public static native void setAutoLogAppEventsEnabled(
+			NSNumber AutoLogAppEventsEnabled);
 }

@@ -26,6 +26,7 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.moe.natj.general.ann.ReferenceInfo;
 
 @Generated
 @Library("FBSDKCoreKit")
@@ -153,7 +154,7 @@ public class FBSDKUtility extends NSObject {
 	@Generated
 	@Selector("queryStringWithDictionary:error:")
 	public static native String queryStringWithDictionaryError(
-			NSDictionary<?, ?> dictionary, Ptr<NSError> errorRef);
+			NSDictionary<?, ?> dictionary, @ReferenceInfo(type=NSError.class) Ptr<NSError> errorRef);
 
 	@Generated
 	@Selector("resolveClassMethod:")

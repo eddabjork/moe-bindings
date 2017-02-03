@@ -12,6 +12,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.moe.natj.general.ann.ReferenceInfo;
 
 @Generated
 @Library("FBSDKShareKit")
@@ -46,5 +47,5 @@ public interface FBSDKSharing {
 
 	@Generated
 	@Selector("validateWithError:")
-	boolean validateWithError(Ptr<NSError> errorRef);
+	boolean validateWithError(@ReferenceInfo(type=NSError.class) Ptr<NSError> errorRef);
 }

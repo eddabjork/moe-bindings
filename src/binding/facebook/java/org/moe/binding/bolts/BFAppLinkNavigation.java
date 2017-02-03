@@ -28,6 +28,7 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.moe.natj.general.ann.ReferenceInfo;
 
 @Generated
 @Library("Bolts")
@@ -158,13 +159,13 @@ public class BFAppLinkNavigation extends NSObject {
 	@Generated
 	@Selector("navigate:")
 	@NInt
-	public native long navigate(Ptr<NSError> error);
+	public native long navigate(@ReferenceInfo(type=NSError.class) Ptr<NSError> error);
 
 	@Generated
 	@Selector("navigateToAppLink:error:")
 	@NInt
 	public static native long navigateToAppLinkError(BFAppLink link,
-			Ptr<NSError> error);
+			@ReferenceInfo(type=NSError.class) Ptr<NSError> error);
 
 	@Generated
 	@Selector("navigateToURLInBackground:")

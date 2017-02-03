@@ -173,4 +173,9 @@ public class FBSDKApplicationDelegate extends NSObject {
 	@Selector("version")
 	@NInt
 	public static native long version_static();
+
+	@Generated
+	@Selector("application:openURL:options:")
+	public native boolean applicationOpenURLOptions(UIApplication application,
+			NSURL url, NSDictionary<String, ?> options);
 }

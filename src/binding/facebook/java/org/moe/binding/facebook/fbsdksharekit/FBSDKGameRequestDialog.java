@@ -26,6 +26,7 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.moe.natj.general.ann.ReferenceInfo;
 
 @Generated
 @Library("FBSDKShareKit")
@@ -209,7 +210,7 @@ public class FBSDKGameRequestDialog extends NSObject {
 
 	@Generated
 	@Selector("validateWithError:")
-	public native boolean validateWithError(Ptr<NSError> errorRef);
+	public native boolean validateWithError(@ReferenceInfo(type=NSError.class) Ptr<NSError> errorRef);
 
 	@Generated
 	@Selector("version")

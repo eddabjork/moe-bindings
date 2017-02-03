@@ -26,6 +26,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.foundation.NSError;
+import org.moe.natj.objc.ann.ObjCBlock;
 
 @Generated
 @Library("FBSDKCoreKit")
@@ -242,4 +244,26 @@ public class FBSDKAppEvents extends NSObject {
 	@Selector("version")
 	@NInt
 	public static native long version_static();
+
+	@Generated
+	@Selector("setUserID:")
+	public static native void setUserID(String userID);
+
+	@Generated
+	@Selector("updateUserProperties:handler:")
+	public static native void updateUserPropertiesHandler(
+			NSDictionary<?, ?> properties,
+			@ObjCBlock(name = "call_updateUserPropertiesHandler") Block_updateUserPropertiesHandler handler);
+
+	@Runtime(ObjCRuntime.class)
+	@Generated
+	public interface Block_updateUserPropertiesHandler {
+		@Generated
+		void call_updateUserPropertiesHandler(FBSDKGraphRequestConnection arg0,
+				@Mapped(ObjCObjectMapper.class) Object arg1, NSError arg2);
+	}
+
+	@Generated
+	@Selector("userID")
+	public static native String userID();
 }

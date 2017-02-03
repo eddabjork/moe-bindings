@@ -15,5 +15,5 @@ echo "$PROJECT_DIR"
 echo "$PROJECT_NAME"
 echo "$NATJGEN_FILE"
 
-cd "$HOME/.moe/moe-sdk-1.2.0/tools"
+cd "$HOME/.moe/moe-sdk-1.3.0-beta-2/tools"
 java -cp wrapnatjgen.jar org.moe.natjgen.Main "$PROJECT_DIR" "$PROJECT_NAME" "$NATJGEN_FILE"
